@@ -11,6 +11,7 @@ License: BSD
 Group:		Apllications/Audio
 URL: http://www.enlightenment.org/
 Source: %{name}-%{version}.tar.bz2
+Source1:	extrackt.desktop
 BuildRequires: edje-devel >= 0.5.0.038, ecore-devel >= 0.9.9.038
 BuildRequires: eet-devel >= 0.9.10.038
 BuildRequires: evas-devel >= 0.9.9.038
