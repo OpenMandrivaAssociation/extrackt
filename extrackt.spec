@@ -19,6 +19,9 @@ BuildRequires: etk-devel >= 0.1.0.003
 BuildRequires: enhance-devel >= 0.0.1
 Buildrequires: edje >= 0.5.0.038
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
+BuildRequires:  ImageMagick
+BuildRequires:  desktop-file-utils
+
 
 %description
 Extrackt is essentially an audio CD ripper and encoder. It allows you to
@@ -82,5 +85,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-, root, root)
-%doc AUTHORS ChangeLog COPYING* INSTALL README
+%doc AUTHORS INSTALL README
 %{_bindir}/%{name}
+%{_menudir}/*
+%_liconsdir/*.png
+%_iconsdir/*.png
+%_miconsdir/*.png
+%_datadir/pixmaps/*.png
+%{_datadir}/applications/*
+%{_datadir}/%name
+
