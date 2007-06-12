@@ -1,6 +1,6 @@
 %define name extrackt
 %define version 0.0.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 
 Summary:	Extrackt is essentially an audio CD ripper and encoder
@@ -8,7 +8,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%release
 License: BSD
-Group:		Apllications/Audio
+Group:		Sound
 URL: http://www.enlightenment.org/
 Source: %{name}-%{version}.tar.bz2
 Source1:	extrackt.desktop
