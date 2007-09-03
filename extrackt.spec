@@ -1,6 +1,6 @@
 %define name extrackt
 %define version 0.0.2
-%define release %mkrel 2
+%define release %mkrel 3
 
 
 Summary:	Extrackt is essentially an audio CD ripper and encoder
@@ -12,9 +12,9 @@ Group:		Sound
 URL: http://www.enlightenment.org/
 Source: %{name}-%{version}.tar.bz2
 Source1:	extrackt.desktop
-BuildRequires: edje-devel >= 0.5.0.038, ecore-devel >= 0.9.9.038
-BuildRequires: eet-devel >= 0.9.10.038
-BuildRequires: evas-devel >= 0.9.9.038
+BuildRequires: edje-devel >= 0.5.0.038, ecore-devel >= 0.9.9.041
+BuildRequires: eet-devel >= 0.9.10.041
+BuildRequires: evas-devel >= 0.9.9.041
 BuildRequires: etk-devel >= 0.1.0.003
 BuildRequires: enhance-devel >= 0.0.1
 Buildrequires: edje >= 0.5.0.038
