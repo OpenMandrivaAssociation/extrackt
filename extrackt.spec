@@ -21,7 +21,6 @@ Buildrequires: edje >= 0.5.0.038
 BuildRequires: ImageMagick
 BuildRequires: desktop-file-utils
 Requires: vorbis-tools, cdparanoia
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 
 
