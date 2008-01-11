@@ -44,19 +44,7 @@ make
 %install
 %makeinstall
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
 
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):\
-        needs="X11" \
-        section="Multimedia/Audio" \
-        title="Extrackt" \
-        longtitle="Extrackt CD ripper and encoder" \
-        command="%{_bindir}/%name" \
-        icon="%name.png" \
-        startup_notify="true" \
-        xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/applications/
@@ -89,7 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %doc AUTHORS INSTALL README
 %{_bindir}/%{name}
-%{_menudir}/*
 %_liconsdir/*.png
 %_iconsdir/*.png
 %_miconsdir/*.png
