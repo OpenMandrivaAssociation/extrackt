@@ -3,7 +3,7 @@
 %define release %mkrel 3
 
 
-Summary:	Extrackt is essentially an audio CD ripper and encoder
+Summary:	Essentially an audio CD ripper and encoder
 Name:		%{name}
 Version:	%{version}
 Release:	%release
