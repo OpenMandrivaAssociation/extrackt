@@ -23,8 +23,6 @@ BuildRequires: desktop-file-utils
 Requires: vorbis-tools, cdparanoia
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-
-
 %description
 Extrackt is essentially an audio CD ripper and encoder. It allows you to
 choose your ripper and encoder based on templates which give Extrackt the
@@ -34,17 +32,15 @@ and allows for frontends to be written using any toolkit like Etk, Ewl, Gtk,
 or even pure Evas / Edje (not to mention ncurses or simlpe shell ones).
 
 %prep
-rm -rf $RPM_BUILD_ROOT
 %setup -q
 
 %build
 %configure2_5x
-make
+%make
 
 %install
-%makeinstall
-
-
+rm -fr %buildroot
+%makeinstall_std
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/applications/
@@ -83,4 +79,3 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/pixmaps/*.png
 %{_datadir}/applications/*
 %{_datadir}/%name
-
