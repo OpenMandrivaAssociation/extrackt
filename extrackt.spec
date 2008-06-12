@@ -59,11 +59,15 @@ convert -resize 16x16 data/images/extrackt_icon.png %buildroot%_miconsdir/%name.
 mkdir -p %buildroot%{_datadir}/pixmaps
 cp data/images/extrackt_icon.png %buildroot%{_datadir}/pixmaps/%name.png
 
+%if %mdkversion < 200900
 %post 
 %{update_menus} 
+%endif
 
+%if %mdkversion < 200900
 %postun 
 %{clean_menus} 
+%endif
 
 
 %clean
