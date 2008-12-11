@@ -18,7 +18,7 @@ BuildRequires: evas-devel >= 0.9.9.041
 BuildRequires: etk-devel >= 0.1.0.003
 BuildRequires: enhance-devel >= 0.0.1
 Buildrequires: edje >= 0.5.0.038
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 BuildRequires: desktop-file-utils
 Requires: vorbis-tools, cdparanoia
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
