@@ -1,6 +1,6 @@
 %define name extrackt
 %define version 0.0.2
-%define release %mkrel 7
+%define release %mkrel 8
 
 Summary:	Essentially an audio CD ripper and encoder
 Name:		%{name}
@@ -10,7 +10,6 @@ License: BSD
 Group:		Sound
 URL: http://www.enlightenment.org/
 Source: %{name}-%{version}.tar.bz2
-Source1:	extrackt.desktop
 BuildRequires: edje-devel >= 0.9.9.050, ecore-devel >= 0.9.9.050
 BuildRequires: eet-devel >= 1.1.0
 BuildRequires: evas-devel >= 0.9.9.050
@@ -34,29 +33,13 @@ or even pure Evas / Edje (not to mention ncurses or simlpe shell ones).
 %setup -q
 
 %build
+NOCONFIGURE=yes ./autogen.sh
 %configure2_5x
 %make
 
 %install
 rm -fr %buildroot
 %makeinstall_std
-
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cp %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/applications/
-
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-Multimedia-Audio" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/%name.desktop
-
-mkdir -p %buildroot{%_liconsdir,%_iconsdir,%_miconsdir}
-install -m 644 data/images/extrackt_icon.png %buildroot%_liconsdir/%name.png
-convert -resize 32x32 data/images/extrackt_icon.png %buildroot%_iconsdir/%name.png
-convert -resize 16x16 data/images/extrackt_icon.png %buildroot%_miconsdir/%name.png
-
-
-mkdir -p %buildroot%{_datadir}/pixmaps
-cp data/images/extrackt_icon.png %buildroot%{_datadir}/pixmaps/%name.png
 
 %if %mdkversion < 200900
 %post 
@@ -68,7 +51,6 @@ cp data/images/extrackt_icon.png %buildroot%{_datadir}/pixmaps/%name.png
 %{clean_menus} 
 %endif
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -76,9 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %doc AUTHORS INSTALL README
 %{_bindir}/%{name}
-%_liconsdir/*.png
-%_iconsdir/*.png
-%_miconsdir/*.png
-%_datadir/pixmaps/*.png
 %{_datadir}/applications/*
+%{_datadir}/pixmaps/extrackt.png
 %{_datadir}/%name
