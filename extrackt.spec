@@ -1,6 +1,6 @@
 %define name extrackt
 %define version 0.0.2
-%define release %mkrel 8
+%define release %mkrel 9
 
 Summary:	Essentially an audio CD ripper and encoder
 Name:		%{name}
