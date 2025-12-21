@@ -10,6 +10,11 @@ License: BSD
 Group:		Sound
 URL: https://www.enlightenment.org/
 Source: %{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: edje-devel >= 0.9.9.050, ecore-devel >= 0.9.9.050
 BuildRequires: eet-devel >= 1.1.0
 BuildRequires: evas-devel >= 0.9.9.050
